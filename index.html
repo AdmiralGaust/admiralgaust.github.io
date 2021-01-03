@@ -139,6 +139,8 @@
         <h2 class="heading">Projects</h2>
         <div class="container">
             <div class="row">
+
+            <!-- Start Project -->
                 <div class="project shadow-large">
                     <div class="project-image">
                         <img src="images/project.jpg" />
@@ -155,44 +157,32 @@
                 </div>
                 <!-- End .project -->
 
+        <!-- View More Projects Markdown -->
+
+        <a id="view-more-projects" href="#">View More Projects</a>
+
+        <!-- Projects hidden by default -->
+        <div id="more-projects" class="row">
+
+            <!-- Start Project -->
                 <div class="project shadow-large">
                     <div class="project-image">
                         <img src="images/project.jpg" />
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
-                        <h3>Bug Bounty Recon</h3>
+                        <h3>Bounty Recon</h3>
                         <p>
-                            To automate bug bounties.
+                            Descrition
                         </p>
-                        <a target="_blank" href="http://example.com"> View Project </a>
+                        <a target="_blank" href="https://admiralgaust.github.io/oscp/">View Project</a>
                     </div>
                     <!-- End .project-info -->
                 </div>
-                <!-- End .project -->
+                <!-- End .project -->      
 
-            <!-- View More Projects Markdown -->
-
-            <a id="view-more-projects" href="#">View More Projects</a>
-            <div id="more-projects" class="row">
-             <div class="project shadow-large">
-                   <div class="project-image">
-                    <img src="images/project.jpg" />
-                 </div>
-        <!-- End .project-image -->
-        <div class="project-info">
-            <h3>Extra Project</h3>
-                    <p>
-                        Short description.
-                    </p>
-                    <a target="_blank" href="#">View Project</a>
-                     </div>
-                     <!-- End .project-info -->
-                    </div>
-                <!-- End .project -->
-                </div>
-
-          <!-- View More Projects Markdown End-->
+        </div>
+        <!-- Hidden Projects Finsihed-->
 
             </div>
         </div>
@@ -225,7 +215,7 @@
         <div id="contact-form">
             <form method="POST" action="https://formspree.io/f/myybbrzj">
                 <input type="hidden" name="_subject" value="Contact request from Github Portfolio" />
-                <input type="hidden" name="_next" value="#thanks" />
+                <input type="hidden" name="_next" value="https://admiralgaust.github.io/#thanks" />
                 <input type="text" name="_gotcha" style="display:none" />
                 <input type="email" name="_replyto" placeholder="Your email" required>
                 <textarea name="message" placeholder="Your message" required></textarea>
