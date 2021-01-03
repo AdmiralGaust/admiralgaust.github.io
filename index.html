@@ -126,7 +126,7 @@
         <div class="education-block">
             <h3>AKTU University (Formerly UPTU)</h3>
             <span class="education-date">Aug 2014 - Aug 2018</span>
-            <h4>Bachelor of Technology in Computer Science</h4>
+            <h4>Bachelor of Technicalchnology in Computer Science</h4>
             <p>
                 I have completed graduation from Nitra Technical Campus, Ghaziabad, in 2018 from Computer Science stream. 
             </p>
@@ -225,6 +225,8 @@
         <div id="contact-form">
             <form method="POST" action="https://formspree.io/f/myybbrzj">
                 <input type="hidden" name="_subject" value="Contact request from Github Portfolio" />
+                <input type="hidden" name="_next" value="#thanks" />
+                <input type="text" name="_gotcha" style="display:none" />
                 <input type="email" name="_replyto" placeholder="Your email" required>
                 <textarea name="message" placeholder="Your message" required></textarea>
                 <button type="submit">Send</button>
@@ -268,6 +270,11 @@
     </footer>
     <!-- End footer -->
 
+    <script type="text/javascript">
+        if (document.location.hash.substring(1)=="thanks"){
+            alert("Thanks for contacting.");
+        }
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/scripts.min.js"></script>
 </body>
