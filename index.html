@@ -227,12 +227,12 @@
     <div id="contact">
         <h2>Get in Touch</h2>
         <div id="contact-form">
-            <form method="POST" action="https://formspree.io/f/myybbrzj">
-                <input type="hidden" name="_subject" value="Contact request from Github Portfolio" />
-                <input type="hidden" name="_next" value="//admiralgaust.github.io/thanks.html" />
+            <form id="my-form" method="POST" action="https://formspree.io/f/myybbrzj">
+                <p id="my-form-status" style="color:yellow"></p>
+                <input type="hidden" name="_subject" value="Portfolio Contact Request" />
                 <input type="email" name="_replyto" placeholder="Your email" required>
                 <textarea name="message" placeholder="Your message" required></textarea>
-                <button type="submit">Send</button>
+                <button type="submit" id="my-form-button">Send</button>
             </form>
         </div>
         <!-- End #contact-form -->
@@ -273,9 +273,48 @@
     </footer>
     <!-- End footer -->
 
-    <script type="text/javascript">
-        if (document.location.hash.substring(1)=="thanks"){
-            alert("Thanks for contacting.");
+    <!-- Ajax for contact form-->
+    <script>
+    window.addEventListener("DOMContentLoaded", function() {
+    
+    var form = document.getElementById("my-form");
+    var button = document.getElementById("my-form-button");
+    var status = document.getElementById("my-form-status");
+
+    function success() {
+      form.reset();
+      button.style = "display: none ";
+      status.innerHTML = "Thanks for contacting :)";
+    }
+
+    function error() {
+      status.innerHTML = "Oops! There was a problem.";
+    }
+
+    // handle the form submission event
+
+    form.addEventListener("submit", function(ev) {
+      ev.preventDefault();
+      var data = new FormData(form);
+      ajax(form.method, form.action, data, success, error);
+    });
+  });
+  
+  // helper function for sending an AJAX request
+
+  function ajax(method, url, data, success, error) {
+    var xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        success(xhr.response, xhr.responseType);
+      } else {
+        error(xhr.status, xhr.response, xhr.responseType);
+            }
+        };
+        xhr.send(data);
         }
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
